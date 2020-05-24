@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using Microsoft.ApplicationInsights.Extensibility.Implementation;
 
 namespace AzureSearch.SharePointOnline.Connector.Helpers
 {
@@ -150,7 +151,7 @@ namespace AzureSearch.SharePointOnline.Connector.Helpers
             var container = storageClient.GetContainerReference(containerName);
             try
             {
-                await container.CreateIfNotExistsAsync();
+                await container.CreateIfNotExistsAsync(BlobContainerPublicAccessType.Container,null, null);
             }
             catch (Exception err)
             {

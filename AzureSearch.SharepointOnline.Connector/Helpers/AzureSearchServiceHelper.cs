@@ -29,7 +29,7 @@ namespace AzureSearch.SharePointOnline.Connector.Helpers
             var index = await client.Indexes.GetAsync("demo-index");
 
             //POST / indexes /[index name] / docs / index ? api - version =[api - version]
-            var uri = $"https://{client.SearchServiceName}.{client.SearchDnsSuffix}/indexes/{indexName}?api-version=2017-11-11-Preview";
+            var uri = $"https://{client.SearchServiceName}.{client.SearchDnsSuffix}/indexes/{indexName}?api-version={client.ApiVersion}";
 
             var json = @"
                 {

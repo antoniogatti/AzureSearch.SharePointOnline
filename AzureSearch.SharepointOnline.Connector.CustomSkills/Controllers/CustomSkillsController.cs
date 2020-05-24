@@ -172,9 +172,9 @@ namespace BishopBlobCustomSkill.Controllers
 
             var requestApiKey = Request.Headers[ApiKeyHeader].FirstOrDefault<string>();
 
-            if (requestApiKey != ApiKey) {
-                return new BadRequestObjectResult("Invalid API key for custom skill");
-            }
+            //if (requestApiKey != ApiKey) {
+            //    return new BadRequestObjectResult("Invalid API key for custom skill");
+            //}
 
             var response = new CustomSkillApiResponse()
             {

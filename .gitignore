@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#updated settings
+AzureSarch.SharepointOnline.Connector.CustomSkills/appSettings.json
+AzureSearch.SharepointOnline.Connector/appSettings.json
+
 # User-specific files
 *.rsuser
 *.suo

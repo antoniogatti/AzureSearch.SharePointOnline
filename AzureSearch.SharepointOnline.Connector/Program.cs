@@ -28,6 +28,7 @@ namespace AzureSearch.SharePointConnector
         public static SearchServiceHelper searchServiceHelper;
         public CloudBlobContainer container;
 
+        #region Variables
         private static bool IncrementalCrawl { get; set; }
         public static string BlobContainerName { get; set; }
         public static string StorageAccountName { get; set; }
@@ -55,10 +56,7 @@ namespace AzureSearch.SharePointConnector
         public static string AppInsightsApiKey { get; set; }
 
         public static string DefinitionsPath = "SearchDefinitions";
-
-        //CloudStorageAccount storageAccount;
-
-
+        #endregion
 
         static async Task Main(string[] args)
         {
@@ -71,35 +69,6 @@ namespace AzureSearch.SharePointConnector
                 return;
             }
             SetGlobalConfig(config);
-
-            ////Logging
-            //IServiceCollection services = new ServiceCollection();
-
-            //// Channel is explicitly configured to do flush on it later.
-            //var channel = new InMemoryChannel();
-            //services.Configure<TelemetryConfiguration>(
-            //    (config) =>
-            //    {
-            //        config.TelemetryChannel = channel;
-            //    }
-            //);
-
-            //services.AddLogging(builder =>
-            //{
-            //    builder.AddConsole();
-            //    builder.AddApplicationInsights(AppInsightsApiKey);
-            //});
-
-            //var provider = services.BuildServiceProvider();
-            //var logger = provider.GetService<ILogger<Program>>();
-
-            //logger.LogInformation("This will show up in Application Insights");
-
-            // Explicitly call Flush() followed by sleep is required in Console Apps.
-            // This is to ensure that even if application terminates, telemetry is sent to the back-end.
-            //channel.Flush();
-
-
 
             searchServiceHelper = new SearchServiceHelper(SearchServiceName, SearchServiceAdminKey);
 
